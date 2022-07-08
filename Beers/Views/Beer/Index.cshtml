@@ -1,0 +1,45 @@
+﻿@using Beers.Domain.Beer
+@model List<Beer>
+
+<h1>Brands</h1>
+
+<p>
+    <a asp-action="Create" >Create a beer</a>
+</p>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Brand
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var beer in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => beer.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => beer.BrandName)
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+else
+{
+    <h3>There aren´t beers</h3>
+}
+

@@ -1,0 +1,36 @@
+﻿@using Beers.Domain.Brand
+
+@model List<Brand>
+@{
+}
+
+<h1>Brands</h1>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var brand in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => brand.Name)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>There aren´t brands</h3>
+}
+
+
